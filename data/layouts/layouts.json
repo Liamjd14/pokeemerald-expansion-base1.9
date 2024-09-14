@@ -4410,6 +4410,16 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_RELM",
+      "name": "TestRElm_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_frp_general",
+      "secondary_tileset": "gTileset_frp_pallet_town",
+      "border_filepath": "data/layouts/TestRElm/border.bin",
+      "blockdata_filepath": "data/layouts/TestRElm/map.bin"
     }
   ]
 }

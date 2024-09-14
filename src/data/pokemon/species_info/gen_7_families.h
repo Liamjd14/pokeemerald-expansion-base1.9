@@ -4964,9 +4964,9 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             gOverworldPalette_JangmoO,
             gShinyOverworldPalette_JangmoO
         )
-        .levelUpLearnset = sJangmoOLevelUpLearnset,
-        .teachableLearnset = sJangmoOTeachableLearnset,
-        .eggMoveLearnset = sJangmoOEggMoveLearnset,
+        .levelUpLearnset = sJangmooLevelUpLearnset,
+        .teachableLearnset = sJangmooTeachableLearnset,
+        .eggMoveLearnset = sJangmooEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_HAKAMO_O}),
     },
 
