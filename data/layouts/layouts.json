@@ -4414,10 +4414,10 @@
     {
       "id": "LAYOUT_TEST_RELM",
       "name": "TestRElm_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_frp_general",
-      "secondary_tileset": "gTileset_frp_pallet_town",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/TestRElm/border.bin",
       "blockdata_filepath": "data/layouts/TestRElm/map.bin"
     }
