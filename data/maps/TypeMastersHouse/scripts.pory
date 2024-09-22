@@ -1,0 +1,2635 @@
+mapscripts TypeMastersHouse_MapScripts {
+    end
+}
+
+script ClefairyCry {
+    lock
+    faceplayer
+    playmoncry(SPECIES_CLEFABLE, CRY_MODE_NORMAL)
+    waitmoncry
+    releaseall
+}
+
+script DittoCry {
+    lock
+    faceplayer
+    playmoncry(SPECIES_DITTO, CRY_MODE_NORMAL)
+    waitmoncry
+    releaseall
+}
+
+script SmergalCry {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SMEARGLE, CRY_MODE_NORMAL)
+    waitmoncry
+    releaseall
+}
+
+script MoveMasterInteract {
+    lock
+    faceplayer
+    msgbox("Hello there young trainer,\nIm the one they call the move master.\pThis is the control center for the\nmove tutor network.\pFeel free to use the terminals to\naccsess the here aswell.")
+    releaseall
+}
+
+script Scientist1Interact {
+    lock
+    faceplayer
+    msgbox("Sorry, but im busy connecting other\n regions to the network!")
+    releaseall
+}
+
+script Scientist2Interact {
+    lock
+    faceplayer
+    msgbox("Working on the systems here takes\na lot of work to keep it running.")
+    releaseall
+}
+
+script Scientist3Interact {
+    lock
+    faceplayer
+    msgbox("Keeping the systems running all the time\nrequires a whole team to maintane it.")
+    releaseall
+}
+
+script Scientist4Interact {
+    lock
+    faceplayer
+    msgbox("I am the brains behind this whole\nopperation.\pThe move master use to use TR's to teach\n many moves but with this system he can\ldo it automatically from any of the\lterminals conected to the system.")
+    releaseall
+}
+
+script MoveMasterWifeInteract {
+    lock
+    faceplayer
+    msgbox("My Husband use to be the one of best at\nteaching nearly every move known in the\lpokemon world.\pHowever his new system means we barely\nsee him now.")
+    releaseall
+}
+
+script MoveMasterSonInteract {
+    lock
+    faceplayer
+    msgbox("Dad gave me a Clafary as my\nstarter pokemon.\pHe said it could use any move\n with just one.")
+    releaseall
+}
+
+script PhysicalSign {
+    lock
+    faceplayer
+    msgbox("Physical Moves Tutor")
+    releaseall
+}
+
+script SpecialSign {
+    lock
+    faceplayer
+    msgbox("Special Moves Tutor")
+    releaseall
+}
+
+script StatusSign {
+    lock
+    faceplayer
+    msgbox("Status Moves Tutor")
+    releaseall
+}
+
+script MovePhysicalTypeSelect {
+    lockall
+    setvar(VAR_0x8008, 5000)
+    checkmoney(5000)
+    goto_if_eq(VAR_RESULT, FALSE, TutorCantBuy)
+    msgbox("Welcome to the Physical Move Counter,\nWhat move type do you want?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Bug", "Dark", "Dragon", "Eletric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water")
+    switch(var(VAR_RESULT)){
+        case 0:
+            msgbox("Bug Type Moves Selected.")
+            goto(BugPhysical)
+        case 1:
+            msgbox("Dark Type Moves Selected.")
+            goto(DarkPhysical)
+        case 2:
+            msgbox("Dragon Type Moves Selected.")
+            goto(DragonPhysical)
+        case 3:
+            msgbox("Eletric Type Moves Selected.")
+            goto(ElectricPhysical)
+        case 4:
+            msgbox("Fairy Type Moves Selected.")
+            goto(FairyPhysical)
+        case 5:
+            msgbox("Fighting Type Moves Selected.")
+            goto(FightingPhysical)
+        case 6:
+            msgbox("Fire Type Moves Selected.")
+            goto(FirePhysical)
+        case 7:
+            msgbox("Flying Type Moves Selected.")
+            goto(FlyingPhysical)
+        case 8:
+            msgbox("Ghost Type Moves Selected.")
+            goto(GhostPhysical)
+        case 9:
+            msgbox("Grass Type Moves Selected.")
+            goto(GrassPhysical)
+        case 10:
+            msgbox("Ground Type Moves Selected.")
+            goto(GroundPhysical)
+        case 11:
+            msgbox("Ice Type Moves Selected.")
+            goto(IcePhysical)
+        case 12:
+            msgbox("Normal Type Moves Selected.")
+            goto(NormalPhysical)
+        case 13:
+            msgbox("Poison Type Moves Selected.")
+            goto(PoisonPhysical)
+        case 14:
+            msgbox("Psychic Type Moves Selected.")
+            goto(PsychicPhysical)
+        case 15:
+            msgbox("Rock Type Moves Selected.")
+            goto(RockPhysical)
+        case 16:
+            msgbox("Steel Type Moves Selected.")
+            goto(SteelPhysical)
+        case 17:
+            msgbox("Water Type Moves Selected.")
+            goto(WaterPhysical)
+        case 127:
+            msgbox("Please Come Back Again!")
+            releaseall
+    }
+}
+
+script BugPhysical {
+    msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Pin Missile", "Twineedle", "Fury Cutter", "Pounce", "Fell Stinger", "Bug Bite", "Steamroller", "Skitter Smack", "U-Turn", "Leech Life", "X-Scissor","Lunge", "First Impression", "Megahorn")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_PIN_MISSILE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_TWINEEDLE)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_FURY_CUTTER)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_POUNCE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_FELL_STINGER)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_BUG_BITE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_STEAMROLLER)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_SKITTER_SMACK)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_U_TURN)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_LEECH_LIFE)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_X_SCISSOR)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_LUNGE)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_FIRST_IMPRESSION)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_MEGAHORN)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script DarkPhysical {
+    msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Power Trip", "Pursuit", "Payback", "Assurance", "Brutal Swing", "Feint Attack", "Bite", "Thief", "Knock Off", "Sucker Punch", "Night Slash", "Lash Out", "Jaw Lock", "Crunch", "Throat Chop", "Darkest Lariat", "Foul Play", "Punishment", "Beat Up", "Fling", "Comeuppance")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_POWER_TRIP)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_PURSUIT)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_PAYBACK)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_ASSURANCE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_BRUTAL_SWING)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_FEINT_ATTACK)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_BITE)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_THIEF)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_KNOCK_OFF)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_SUCKER_PUNCH)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_NIGHT_SLASH)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_LASH_OUT)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_JAW_LOCK)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_CRUNCH)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_THROAT_CHOP)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_DARKEST_LARIAT)
+            goto(TeachTutorMove)
+        case 16:
+            setvar(VAR_0x8005, MOVE_FOUL_PLAY)
+            goto(TeachTutorMove)
+        case 17:
+            setvar(VAR_0x8005, MOVE_PUNISHMENT)
+            goto(TeachTutorMove)
+        case 18:
+            setvar(VAR_0x8005, MOVE_BEAT_UP)
+            goto(TeachTutorMove)
+        case 19:
+            setvar(VAR_0x8005, MOVE_FLING)
+            goto(TeachTutorMove)
+        case 20:
+            setvar(VAR_0x8005, MOVE_COMEUPPANCE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script DragonPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Scale Shot", "Dual Chop", "Dragon Tail", "Breaking Swipe", "Dragon Claw", "Dragon Hammer", "Dragon Rush", "Outrage")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SCALE_SHOT)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_DUAL_CHOP)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_BREAKING_SWIPE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_DRAGON_CLAW)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_DRAGON_TAIL)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_DRAGON_HAMMER)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_DRAGON_RUSH)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_OUTRAGE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script ElectricPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Nuzzle", "Thunder Fang", "Spark", "Thunder Punch", "Wild Charge", "Supercell Slam")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_NUZZLE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_THUNDER_FANG)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_SPARK)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_THUNDER_PUNCH)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_WILD_CHARGE)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_SUPERCELL_SLAM)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FairyPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Spirit Break", "Play Rouch")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SPIRIT_BREAK)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_PLAY_ROUGH)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FightingPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Arm Thrust", "Double Kick", "Rock Smash", "Power Up Punch", "Mach Punch", "Karate Chop", "Circle Throw", "Revenge", "Force Palm", "Storm Throw", "Rolling Kick", "Upper Hand", "Low Sweep", "Wake Up Slap", "Vital Throw", "Drain Punch", "Brick Break", "Body Press", "Submission", "Sky Uppercut", "Sacred Sword", " Dynamic Punch", " Cross Chop", "Hammer Arm", "Jump Kick", "Superpower", "Close Combat", "Axe Kick", "High Jump Kick", "Focus Punch", "Reversal", "Low Kick", "Counter", "Seismic Toss")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_ARM_THRUST)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_DOUBLE_KICK)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ROCK_SMASH)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_POWER_UP_PUNCH)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_MACH_PUNCH)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_KARATE_CHOP)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_CIRCLE_THROW)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_REVENGE)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_FORCE_PALM)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_STORM_THROW)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_ROLLING_KICK)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_UPPER_HAND)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_LOW_SWEEP)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_WAKE_UP_SLAP)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_VITAL_THROW)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_DRAIN_PUNCH)
+            goto(TeachTutorMove)
+        case 16:
+            setvar(VAR_0x8005, MOVE_BRICK_BREAK)
+            goto(TeachTutorMove)
+        case 17:
+            setvar(VAR_0x8005, MOVE_BODY_PRESS)
+            goto(TeachTutorMove)
+        case 18:
+            setvar(VAR_0x8005, MOVE_SUBMISSION)
+            goto(TeachTutorMove)
+        case 19:
+            setvar(VAR_0x8005, MOVE_SKY_UPPERCUT)
+            goto(TeachTutorMove)
+        case 20:
+            setvar(VAR_0x8005, MOVE_SACRED_SWORD)
+            goto(TeachTutorMove)
+        case 21:
+            setvar(VAR_0x8005, MOVE_DYNAMIC_PUNCH)
+            goto(TeachTutorMove)
+        case 22:
+            setvar(VAR_0x8005, MOVE_CROSS_CHOP)
+            goto(TeachTutorMove)
+        case 23:
+            setvar(VAR_0x8005, MOVE_HAMMER_ARM)
+            goto(TeachTutorMove)
+        case 24:
+            setvar(VAR_0x8005, MOVE_JUMP_KICK)
+            goto(TeachTutorMove)
+        case 25:
+            setvar(VAR_0x8005, MOVE_SUPERPOWER)
+            goto(TeachTutorMove)
+        case 26:
+            setvar(VAR_0x8005, MOVE_CLOSE_COMBAT)
+            goto(TeachTutorMove)
+        case 27:
+            setvar(VAR_0x8005, MOVE_AXE_KICK)
+            goto(TeachTutorMove)
+        case 28:
+            setvar(VAR_0x8005, MOVE_HIGH_JUMP_KICK)
+            goto(TeachTutorMove)
+        case 29:
+            setvar(VAR_0x8005, MOVE_FOCUS_PUNCH)
+            goto(TeachTutorMove)
+        case 30:
+            setvar(VAR_0x8005, MOVE_REVERSAL)
+            goto(TeachTutorMove)
+        case 31:
+            setvar(VAR_0x8005, MOVE_LOW_KICK)
+            goto(TeachTutorMove)
+        case 32:
+            setvar(VAR_0x8005, MOVE_COUNTER)
+            goto(TeachTutorMove)
+        case 33:
+            setvar(VAR_0x8005, MOVE_SEISMIC_TOSS)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FirePhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Flame Charge", "Flame Wheel", "Fire Fang", "Temper Flare", "Fire Punch", "Fire Lash", "Blaze Kick", "Sacred Fire", "Raging Dury", "Flare Blitz", "Heat Crash")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_FLAME_CHARGE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_FLAME_WHEEL)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_FIRE_FANG)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_TEMPER_FLARE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_FIRE_PUNCH)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_FIRE_LASH)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_BLAZE_KICK)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_SACRED_FIRE)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_RAGING_FURY)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_FLARE_BLITZ)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_HEAT_CRASH)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FlyingPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Peck", "Dual Wingbeat", "Acrobatics", "Sky Drop", "Pluck", "Aerial Ace", "Wing Attack", "Drill Peck", "Bounce", "Fly", "Brave Bird", "Sky Attack")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_PECK)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_DUAL_WINGBEAT)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ACROBATICS)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_SKY_DROP)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_PLUCK)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_AERIAL_ACE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_WING_ATTACK)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_DRILL_PECK)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_BOUNCE)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_FLY)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_BRAVE_BIRD)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_SKY_ATTACK)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GhostPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Astonish", "Lick", "Shadow Sneak", "Last Respects", "Shadow Punch", "Shadow Claw", "Phantom Force", "Poltergeist")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_ASTONISH)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_LICK)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_SHADOW_SNEAK)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_LAST_RESPECTS)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_SHADOW_PUNCH)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_SHADOW_CLAW)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_PHANTOM_FORCE)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_POLTERGEIST)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GrassPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Bullet Seed", "Leafage", "Branch Poke", "Vine Whip", "Trailblaze", "Grassy Glide", "Razor Leaf", "Needle Arm", "Horn Leech", "Seed Bomb", "Leaf Blade", "Petal Blizzard", "Power Whip", "Wood Hammer", "Solar Blade")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_BULLET_SEED)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_LEAFAGE)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_BRANCH_POKE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_VINE_WHIP)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_TRAILBLAZE)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_GRASSY_GLIDE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_RAZOR_LEAF)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_NEEDLE_ARM)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_HORN_LEECH)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_SEED_BOMB)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_LEAF_BLADE)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_PETAL_BLIZZARD)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_POWER_WHIP)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_WOOD_HAMMER)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_SOLAR_BLADE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GroundPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Bulldoze", "Stomping Tantrum", "Drill Run", "Dig", "High Horsepower", "Earthquake", "Headlong Rush", "Magnitude", "Fissure")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_BULLDOZE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_STOMPING_TANTRUM)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_DRILL_RUN)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_DIG)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_HIGH_HORSEPOWER)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_EARTHQUAKE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_HEADLONG_RUSH)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_MAGNITUDE)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_FISSURE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script IcePhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Triple Axel", "Icicle Spear", "Ice Ball", "Ice Shard", "Avalanche", "Ice Fang", "Ice Punch", "Ice Spinner", "Icicle Crash", "Ice Hammer")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_TRIPLE_AXEL)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_ICICLE_SPEAR)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ICE_BALL)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_ICE_SHARD)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_AVALANCHE)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_ICE_FANG)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_ICE_PUNCH)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_ICE_SPINNER)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_ICICLE_CRASH)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_ICE_HAMMER)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script NormalPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Constrict", "Double Slap", "Bind", "Fury Attack", "Wrap", "Fury Swipes", "Comet Punch", "Spike Cannon", "Rage", "Tail Slap", "Feint", "Double Hit", "Fake Out", "Pay Day", "Quick Attack", "Pound", "Scratch", "Tackle", "False Swipe", "Hold Back", "Cut", "Rapid Spin", "Vise Grip", "Covet", "Stomp", "Horn Attack", "Retaliate", "Dizzy Punch", "Smelling Salts", "Headbutt", "Slash", "Facade", "Secret Power", "Chip Away", "Extreme Speed", "Hyper Fang", "Strengh", "Slam", "Mega Punch", "Body Slam", "Take Down", "Rock Climb", "Egg Bomb", "Mega kick", "Thrash", "Double Edge", "Skull Bash", "Last Resort", "Giga Impact", "Self Destruct", "Explosion", "Endeavor", "Super Fang", "Bide", "Present", "Flail", "Natural Gift", "Return", "Frustration", "Guillotine", "Horn Drill")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_CONSTRICT)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_DOUBLE_SLAP)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_BIND)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_FURY_ATTACK)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_WRAP)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_FURY_SWIPES)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_COMET_PUNCH)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_SPIKE_CANNON)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_RAGE)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_TAIL_SLAP)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_FEINT)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_DOUBLE_HIT)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_FAKE_OUT)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_PAY_DAY)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_QUICK_ATTACK)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_POUND)
+            goto(TeachTutorMove)
+        case 16:
+            setvar(VAR_0x8005, MOVE_SCRATCH)
+            goto(TeachTutorMove)
+        case 17:
+            setvar(VAR_0x8005, MOVE_TACKLE)
+            goto(TeachTutorMove)
+        case 18:
+            setvar(VAR_0x8005, MOVE_FALSE_SWIPE)
+            goto(TeachTutorMove)
+        case 19:
+            setvar(VAR_0x8005, MOVE_HOLD_BACK)
+            goto(TeachTutorMove)
+        case 20:
+            setvar(VAR_0x8005, MOVE_CUT)
+            goto(TeachTutorMove)
+        case 21:
+            setvar(VAR_0x8005, MOVE_RAPID_SPIN)
+            goto(TeachTutorMove)
+        case 22:
+            setvar(VAR_0x8005, MOVE_VISE_GRIP)
+            goto(TeachTutorMove)
+        case 23:
+            setvar(VAR_0x8005, MOVE_COVET)
+            goto(TeachTutorMove)
+        case 24:
+            setvar(VAR_0x8005, MOVE_STOMP)
+            goto(TeachTutorMove)
+        case 25:
+            setvar(VAR_0x8005, MOVE_HORN_ATTACK)
+            goto(TeachTutorMove)
+        case 26:
+            setvar(VAR_0x8005, MOVE_RETALIATE)
+            goto(TeachTutorMove)
+        case 27:
+            setvar(VAR_0x8005, MOVE_DIZZY_PUNCH)
+            goto(TeachTutorMove)
+        case 28:
+            setvar(VAR_0x8005, MOVE_SMELLING_SALTS)
+            goto(TeachTutorMove)
+        case 29:
+            setvar(VAR_0x8005, MOVE_HEADBUTT)
+            goto(TeachTutorMove)
+        case 30:
+            setvar(VAR_0x8005, MOVE_SLASH)
+            goto(TeachTutorMove)
+        case 31:
+            setvar(VAR_0x8005, MOVE_FACADE)
+            goto(TeachTutorMove)
+        case 32:
+            setvar(VAR_0x8005, MOVE_SECRET_POWER)
+            goto(TeachTutorMove)
+        case 33:
+            setvar(VAR_0x8005, MOVE_CHIP_AWAY)
+            goto(TeachTutorMove)
+        case 34:
+            setvar(VAR_0x8005, MOVE_CRUSH_CLAW)
+            goto(TeachTutorMove)
+        case 35:
+            setvar(VAR_0x8005, MOVE_EXTREME_SPEED)
+            goto(TeachTutorMove)
+        case 36:
+            setvar(VAR_0x8005, MOVE_HYPER_FANG)
+            goto(TeachTutorMove)
+        case 37:
+            setvar(VAR_0x8005, MOVE_STRENGTH)
+            goto(TeachTutorMove)
+        case 38:
+            setvar(VAR_0x8005, MOVE_SLAM)
+            goto(TeachTutorMove)
+        case 39:
+            setvar(VAR_0x8005, MOVE_MEGA_PUNCH)
+            goto(TeachTutorMove)
+        case 40:
+            setvar(VAR_0x8005, MOVE_BODY_SLAM)
+            goto(TeachTutorMove)
+        case 41:
+            setvar(VAR_0x8005, MOVE_TAKE_DOWN)
+            goto(TeachTutorMove)
+        case 42:
+            setvar(VAR_0x8005, MOVE_ROCK_CLIMB)
+            goto(TeachTutorMove)
+        case 43:
+            setvar(VAR_0x8005, MOVE_EGG_BOMB)
+            goto(TeachTutorMove)
+        case 44:
+            setvar(VAR_0x8005, MOVE_MEGA_KICK)
+            goto(TeachTutorMove)
+        case 45:
+            setvar(VAR_0x8005, MOVE_THRASH)
+            goto(TeachTutorMove)
+        case 46:
+            setvar(VAR_0x8005, MOVE_DOUBLE_EDGE)
+            goto(TeachTutorMove)
+        case 47:
+            setvar(VAR_0x8005, MOVE_SKULL_BASH)
+            goto(TeachTutorMove)
+        case 48:
+            setvar(VAR_0x8005, MOVE_LAST_RESORT)
+            goto(TeachTutorMove)
+        case 49:
+            setvar(VAR_0x8005, MOVE_GIGA_IMPACT)
+            goto(TeachTutorMove)
+        case 50:
+            setvar(VAR_0x8005, MOVE_SELF_DESTRUCT)
+            goto(TeachTutorMove)
+        case 51:
+            setvar(VAR_0x8005, MOVE_EXPLOSION)
+            goto(TeachTutorMove)
+        case 52:
+            setvar(VAR_0x8005, MOVE_ENDEAVOR)
+            goto(TeachTutorMove)
+        case 53:
+            setvar(VAR_0x8005, MOVE_SUPER_FANG)
+            goto(TeachTutorMove)
+        case 54:
+            setvar(VAR_0x8005, MOVE_BIDE)
+            goto(TeachTutorMove)
+        case 55:
+            setvar(VAR_0x8005, MOVE_PRESENT)
+            goto(TeachTutorMove)
+        case 56:
+            setvar(VAR_0x8005, MOVE_FLAIL)
+            goto(TeachTutorMove)
+        case 57:
+            setvar(VAR_0x8005, MOVE_NATURAL_GIFT)
+            goto(TeachTutorMove)
+        case 58:
+            setvar(VAR_0x8005, MOVE_RETURN)
+            goto(TeachTutorMove)
+        case 59:
+            setvar(VAR_0x8005, MOVE_FRUSTRATION)
+            goto(TeachTutorMove)
+        case 60:
+            setvar(VAR_0x8005, MOVE_GUILLOTINE)
+            goto(TeachTutorMove)
+        case 61:
+            setvar(VAR_0x8005, MOVE_HORN_DRILL)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script PoisonPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Poison Sting", "Poison Fang", "Poison Tail", "Cross Poison", "Poison Jab", "Gunk Shot")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_POISON_STING)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_POISON_FANG)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_POISON_TAIL)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_CROSS_POISON)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_POISON_JAB)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_GUNK_SHOT)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script PsychicPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Heart Stamp", "Psycho Cut", "Zen Headbutt", "Psychic Fangs")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_HEART_STAMP)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_PSYCHO_CUT)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ZEN_HEADBUTT)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_PSYCHIC_FANGS)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script RockPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Rock Blast", "Rollout", "Rock Throw", "Smack Down", "Rock Tomb", "Rock Slide", "Stone Edge", "Head Smash", "Rock Wrecker")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_ROCK_BLAST)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_ROLLOUT)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ROCK_THROW)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_SMACK_DOWN)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_ROCK_TOMB)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_ROCK_SLIDE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_STONE_EDGE)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_HEAD_SMASH)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_ROCK_WRECKER)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script SteelPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Bullet Punch", "Metal Claw", "Magnet Bomb", "Smart Strike", "Steel Wing", "Iron Head", "Meteor Mash", "Iron Tail", "Steel Roller", "Gyro Ball", "Metal Burst", "Heavy Slam", "Hard Press")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_BULLET_PUNCH)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_METAL_CLAW)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_MAGNET_BOMB)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_SMART_STRIKE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_STEEL_WING)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_IRON_HEAD)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_METEOR_MASH)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_IRON_TAIL)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_STEEL_ROLLER)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_GYRO_BALL)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_METAL_BURST)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_HEAVY_SLAM)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_HARD_PRESS)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script WaterPhysical {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Clamp", "Aqua Jet", "Flip Turn", "Aqua Cutter", "Razor Shell", "Dive", "Waterfall", "Liquidation", "Aqua Tail", "Crabhammer", "Wave Crash")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_CLAMP)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_AQUA_JET)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_FLIP_TURN)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_AQUA_CUTTER)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_RAZOR_SHELL)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_DIVE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_WATERFALL)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_LIQUIDATION)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_AQUA_TAIL)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_CRABHAMMER)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_WAVE_CRASH)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+
+
+script MoveSpecialTypeSelect {
+    lockall
+    setvar(VAR_0x8008, 5000)
+    checkmoney(5000)
+    goto_if_eq(VAR_RESULT, FALSE, TutorCantBuy)
+    msgbox("Welcome to the Special Move Counter,\nWhat move type do you want?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Bug", "Dark", "Dragon", "Eletric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water")
+    switch(var(VAR_RESULT)){
+        case 0:
+            msgbox("Bug Type Moves Selected.")
+            goto(BugSpecial)
+        case 1:
+            msgbox("Dark Type Moves Selected.")
+            goto(DarkSpecial)
+        case 2:
+            msgbox("Dragon Type Moves Selected.")
+            goto(DragonSpecial)
+        case 3:
+            msgbox("Eletric Type Moves Selected.")
+            goto(ElectricSpecial)
+        case 4:
+            msgbox("Fairy Type Moves Selected.")
+            goto(FairySpecial)
+        case 5:
+            msgbox("Fighting Type Moves Selected.")
+            goto(FightingSpecial)
+        case 6:
+            msgbox("Fire Type Moves Selected.")
+            goto(FireSpecial)
+        case 7:
+            msgbox("Flying Type Moves Selected.")
+            goto(FlyingSpecial)
+        case 8:
+            msgbox("Ghost Type Moves Selected.")
+            goto(GhostSpecial)
+        case 9:
+            msgbox("Grass Type Moves Selected.")
+            goto(GrassSpecial)
+        case 10:
+            msgbox("Ground Type Moves Selected.")
+            goto(GroundSpecial)
+        case 11:
+            msgbox("Ice Type Moves Selected.")
+            goto(IceSpecial)
+        case 12:
+            msgbox("Normal Type Moves Selected.")
+            goto(NormalSpecial)
+        case 13:
+            msgbox("Poison Type Moves Selected.")
+            goto(PoisonSpecial)
+        case 14:
+            msgbox("Psychic Type Moves Selected.")
+            goto(PsychicSpecial)
+        case 15:
+            msgbox("Rock Type Moves Selected.")
+            goto(RockSpecial)
+        case 16:
+            msgbox("Steel Type Moves Selected.")
+            goto(SteelSpecial)
+        case 17:
+            msgbox("Water Type Moves Selected.")
+            goto(WaterSpecial)
+        case 127:
+            msgbox("Please Come Back Again!")
+            releaseall
+    }
+}
+
+script BugSpecial {
+    msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Infestation", "Struggle Bug", "Silver Wind", "Signal Beam", "Bug Buzz", "Pollen Puff")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_INFESTATION)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_STRUGGLE_BUG)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_SILVER_WIND)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_SIGNAL_BEAM)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_BUG_BUZZ)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_POLLEN_PUFF)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script DarkSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Snarl", "Dark Pulse", "Night Daze")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SNARL)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_DARK_PULSE)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_NIGHT_DAZE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script DragonSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Twister", "Dragon Breath", "Dragon Pulse", "Draco Meteor", "Dragon Rage")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_TWISTER)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_DRAGON_BREATH)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_DRAGON_PULSE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_DRACO_METEOR)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_DRAGON_RAGE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script ElectricSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Thunder Shock", "Charge Beam", "Electroweb", "Shock Wave", "Parabolic Charge", "Volt Switch", "Rising Voltage", "Discharge", "Thunderbolt", "Thunder", "Zap Cannon", "Electro Ball")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_THUNDER_SHOCK)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_CHARGE_BEAM)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ELECTROWEB)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_SHOCK_WAVE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_PARABOLIC_CHARGE)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_VOLT_SWITCH)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_RISING_VOLTAGE)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_DISCHARGE)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_THUNDERBOLT)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_THUNDER)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_ZAP_CANNON)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_ELECTRO_BALL)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FairySpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Disarming Voice", "Fairy Wind", "Draining Kiss", "Dazzling Gleam", "Alluring Voice", "Moonblast", "Misty Explosion")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_DISARMING_VOICE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_FAIRY_WIND)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_DRAINING_KISS)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_DAZZLING_GLEAM)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_ALLURING_VOICE)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_MOONBLAST)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_MISTY_EXPLOSION)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FightingSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Vacuum Wave", "Aura Sphere", "Focus Blast", "Final Gambit")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_VACUUM_WAVE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_AURA_SPHERE)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_FOCUS_BLAST)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_FINAL_GAMBIT)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FireSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Fire Spin", "Ember", "Incinerate", "Burning Jealousy", "Flame Burst", "Mystical Fire", "Fire Pledge", "Lava Plume", "Flamethrower", "Heat Wave", "Inferno", "Fire Blast", "Overheat", "Burn Up", "Blast Burn", "Eruption")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_FIRE_SPIN)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_EMBER)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_INCINERATE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_BURNING_JEALOUSY)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_FLAME_BURST)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_MYSTICAL_FIRE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_FIRE_PLEDGE)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_LAVA_PLUME)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_FLAMETHROWER)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_HEAT_WAVE)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_INFERNO)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_FIRE_BLAST)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_OVERHEAT)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_BURN_UP)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_BLAST_BURN)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_ERUPTION)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FlyingSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Gust", "Air Cutter", "Air Slash", "Hurricane")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_GUST)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_AIR_CUTTER)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_AIR_SLASH)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_HURRICANE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GhostSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Ominous Wind", "Hex", "Shadow Ball", "Night Shade")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_OMINOUS_WIND)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_HEX)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_SHADOW_BALL)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_NIGHT_SHADE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GrassSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Absorb", "Mega Drain", "Magical Leaf", "Leaf Tornado", "Giga Drain", "Grass Pledge", "Energy Ball", "Solar Beam", "Petal Dance", "Leaf Storm", "Frenzy Plant", "Grass Knot")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_ABSORB)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_MEGA_DRAIN)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_MAGICAL_LEAF)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_LEAF_TORNADO)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_GIGA_DRAIN)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_GRASS_PLEDGE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_ENERGY_BALL)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_SOLAR_BEAM)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_PETAL_DANCE)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_LEAF_STORM)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_FRENZY_PLANT)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_GRASS_KNOT)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GroundSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Mud Slap", "Mud Shot", "Mud Bomb", "Scorching Sands", "Earth Power")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_MUD_SLAP)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_MUD_SHOT)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_MUD_BOMB)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_SCORCHING_SANDS)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_EARTH_POWER)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script IceSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Powder Snow", "Icy Wind", "Frost Breath", "Aroura Beam", "Freeze Dry", "Ice Beam", "Blizzard", "Sheer Cold")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_POWDER_SNOW)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_ICY_WIND)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_FROST_BREATH)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_AURORA_BEAM)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_FREEZE_DRY)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_ICE_BEAM)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_BLIZZARD)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_SHEER_COLD)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script NormalSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Revival Blessing", "Recover", "Soft-Boiled", "Perish Song", "Heal Bell", "Morning Sun", "Slack Off", "Encore", "Mind Reader", "Lock-On", "Mean Look", "Block", "Minimize", "Metronome", "Substitute", "Protect", "Belly Drum", "Endure", "Sleep Talk", "Swallow", "Wish", "Recycle", "Stuff Cheeks", "Power Shift", "Shed Tail", "Tidy Up", "Scary Face", "Mimic", "Psych Up", "Yawn", "Double Team", "Shell Smash", "Spotlight", "Sing", "Swagger", "Attract", "Simple Beam", "Entrainment", "After You", "Reflect Type", "Bestow", "Swords Dance", "Growth", "Stockpile", "Follow Me", "Nature Power", "Helping Hand", "Assist", "Refresh", "Comouflage", "Copycat", "Tearful Look", "Supersonic", "Disable", "Smokescreen", "Flash", "Sweet Scent", "Teeter Dance", "Tickle", "Captivate", "Whirlwind", "Roar", "Pain Split", "Me First", "Play Nice", "Confide", "Safeguard", "Harden", "Focuse Energy", "Sharpen", "Acupressure", "Lucky Chant", "Work Up", "Happy Hour", "Laser Focus", "Tail Whip", "Leer", "Glare", "Noble Roar", "Defence Curl", "Splash", "Baton Pass", "Howl", "Celebrate", "Hold Hands", "Screech", "Growl", "Foresight", "Oder Sleuth")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_REVIVAL_BLESSING)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_RECOVER)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_SOFT_BOILED)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_PERISH_SONG)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_HEAL_BELL)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_MORNING_SUN)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_SLACK_OFF)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_ENCORE)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_MIND_READER)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_LOCK_ON)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_MEAN_LOOK)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_BLOCK)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_MINIMIZE)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_SUBSTITUTE)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_PROTECT)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_BELLY_DRUM)
+            goto(TeachTutorMove)
+        case 16:
+            setvar(VAR_0x8005, MOVE_ENDURE)
+            goto(TeachTutorMove)
+        case 17:
+            setvar(VAR_0x8005, MOVE_SLEEP_TALK)
+            goto(TeachTutorMove)
+        case 18:
+            setvar(VAR_0x8005, MOVE_SWALLOW)
+            goto(TeachTutorMove)
+        case 19:
+            setvar(VAR_0x8005, MOVE_WISH)
+            goto(TeachTutorMove)
+        case 20:
+            setvar(VAR_0x8005, MOVE_RECYCLE)
+            goto(TeachTutorMove)
+        case 21:
+            setvar(VAR_0x8005, MOVE_STUFF_CHEEKS)
+            goto(TeachTutorMove)
+        case 22:
+            setvar(VAR_0x8005, MOVE_POWER_SHIFT)
+            goto(TeachTutorMove)
+        case 23:
+            setvar(VAR_0x8005, MOVE_SHED_TAIL)
+            goto(TeachTutorMove)
+        case 24:
+            setvar(VAR_0x8005, MOVE_TIDY_UP)
+            goto(TeachTutorMove)
+        case 25:
+            setvar(VAR_0x8005, MOVE_SCARY_FACE)
+            goto(TeachTutorMove)
+        case 26:
+            setvar(VAR_0x8005, MOVE_MIMIC)
+            goto(TeachTutorMove)
+        case 27:
+            setvar(VAR_0x8005, MOVE_PSYCH_UP)
+            goto(TeachTutorMove)
+        case 28:
+            setvar(VAR_0x8005, MOVE_YAWN)
+            goto(TeachTutorMove)
+        case 29:
+            setvar(VAR_0x8005, MOVE_DOUBLE_TEAM)
+            goto(TeachTutorMove)
+        case 30:
+            setvar(VAR_0x8005, MOVE_SHELL_SMASH)
+            goto(TeachTutorMove)
+        case 31:
+            setvar(VAR_0x8005, MOVE_SPOTLIGHT)
+            goto(TeachTutorMove)
+        case 32:
+            setvar(VAR_0x8005, MOVE_SING)
+            goto(TeachTutorMove)
+        case 33:
+            setvar(VAR_0x8005, MOVE_SWAGGER)
+            goto(TeachTutorMove)
+        case 34:
+            setvar(VAR_0x8005, MOVE_ATTRACT)
+            goto(TeachTutorMove)
+        case 35:
+            setvar(VAR_0x8005, MOVE_SIMPLE_BEAM)
+            goto(TeachTutorMove)
+        case 36:
+            setvar(VAR_0x8005, MOVE_ENTRAINMENT)
+            goto(TeachTutorMove)
+        case 37:
+            setvar(VAR_0x8005, MOVE_AFTER_YOU)
+            goto(TeachTutorMove)
+        case 38:
+            setvar(VAR_0x8005, MOVE_REFLECT_TYPE)
+            goto(TeachTutorMove)
+        case 39:
+            setvar(VAR_0x8005, MOVE_BESTOW)
+            goto(TeachTutorMove)
+        case 40:
+            setvar(VAR_0x8005, MOVE_SWORDS_DANCE)
+            goto(TeachTutorMove)
+        case 41:
+            setvar(VAR_0x8005, MOVE_GROWTH)
+            goto(TeachTutorMove)
+        case 42:
+            setvar(VAR_0x8005, MOVE_STOCKPILE)
+            goto(TeachTutorMove)
+        case 43:
+            setvar(VAR_0x8005, MOVE_FOLLOW_ME)
+            goto(TeachTutorMove)
+        case 44:
+            setvar(VAR_0x8005, MOVE_NATURE_POWER)
+            goto(TeachTutorMove)
+        case 45:
+            setvar(VAR_0x8005, MOVE_HELPING_HAND)
+            goto(TeachTutorMove)
+        case 46:
+            setvar(VAR_0x8005, MOVE_ASSIST)
+            goto(TeachTutorMove)
+        case 47:
+            setvar(VAR_0x8005, MOVE_REFRESH)
+            goto(TeachTutorMove)
+        case 48:
+            setvar(VAR_0x8005, MOVE_CAMOUFLAGE)
+            goto(TeachTutorMove)
+        case 49:
+            setvar(VAR_0x8005, MOVE_COPYCAT)
+            goto(TeachTutorMove)
+        case 50:
+            setvar(VAR_0x8005, MOVE_TEARFUL_LOOK)
+            goto(TeachTutorMove)
+        case 51:
+            setvar(VAR_0x8005, MOVE_SUPERSONIC)
+            goto(TeachTutorMove)
+        case 52:
+            setvar(VAR_0x8005, MOVE_DISABLE)
+            goto(TeachTutorMove)
+        case 53:
+            setvar(VAR_0x8005, MOVE_SMOKESCREEN)
+            goto(TeachTutorMove)
+        case 54:
+            setvar(VAR_0x8005, MOVE_FLASH)
+            goto(TeachTutorMove)
+        case 55:
+            setvar(VAR_0x8005, MOVE_SWEET_SCENT)
+            goto(TeachTutorMove)
+        case 56:
+            setvar(VAR_0x8005, MOVE_TEETER_DANCE)
+            goto(TeachTutorMove)
+        case 57:
+            setvar(VAR_0x8005, MOVE_TICKLE)
+            goto(TeachTutorMove)
+        case 58:
+            setvar(VAR_0x8005, MOVE_CAPTIVATE)
+            goto(TeachTutorMove)
+        case 59:
+            setvar(VAR_0x8005, MOVE_WHIRLWIND)
+            goto(TeachTutorMove)
+        case 60:
+            setvar(VAR_0x8005, MOVE_ROAR)
+            goto(TeachTutorMove)
+        case 61:
+            setvar(VAR_0x8005, MOVE_PAIN_SPLIT)
+            goto(TeachTutorMove)
+        case 62:
+            setvar(VAR_0x8005, MOVE_ME_FIRST)
+            goto(TeachTutorMove)
+        case 63:
+            setvar(VAR_0x8005, MOVE_PLAY_NICE)
+            goto(TeachTutorMove)
+        case 64:
+            setvar(VAR_0x8005, MOVE_CONFIDE)
+            goto(TeachTutorMove)
+        case 65:
+            setvar(VAR_0x8005, MOVE_SAFEGUARD)
+            goto(TeachTutorMove)
+        case 66:
+            setvar(VAR_0x8005, MOVE_HARDEN)
+            goto(TeachTutorMove)
+        case 67:
+            setvar(VAR_0x8005, MOVE_FOCUS_ENERGY)
+            goto(TeachTutorMove)
+        case 68:
+            setvar(VAR_0x8005, MOVE_SHARPEN)
+            goto(TeachTutorMove)
+        case 69:
+            setvar(VAR_0x8005, MOVE_ACUPRESSURE)
+            goto(TeachTutorMove)
+        case 70:
+            setvar(VAR_0x8005, MOVE_LUCKY_CHANT)
+            goto(TeachTutorMove)
+        case 71:
+            setvar(VAR_0x8005, MOVE_WORK_UP)
+            goto(TeachTutorMove)
+        case 72:
+            setvar(VAR_0x8005, MOVE_HAPPY_HOUR)
+            goto(TeachTutorMove)
+        case 73:
+            setvar(VAR_0x8005, MOVE_LASER_FOCUS)
+            goto(TeachTutorMove)
+        case 74:
+            setvar(VAR_0x8005, MOVE_TAIL_WHIP)
+            goto(TeachTutorMove)
+        case 75:
+            setvar(VAR_0x8005, MOVE_LEER)
+            goto(TeachTutorMove)
+        case 76:
+            setvar(VAR_0x8005, MOVE_GLARE)
+            goto(TeachTutorMove)
+        case 77:
+            setvar(VAR_0x8005, MOVE_NOBLE_ROAR)
+            goto(TeachTutorMove)
+        case 78:
+            setvar(VAR_0x8005, MOVE_DEFENSE_CURL)
+            goto(TeachTutorMove)
+        case 79:
+            setvar(VAR_0x8005, MOVE_SPLASH)
+            goto(TeachTutorMove)
+        case 80:
+            setvar(VAR_0x8005, MOVE_BATON_PASS)
+            goto(TeachTutorMove)
+        case 81:
+            setvar(VAR_0x8005, MOVE_HOWL)
+            goto(TeachTutorMove)
+        case 82:
+            setvar(VAR_0x8005, MOVE_CELEBRATE)
+            goto(TeachTutorMove)
+        case 83:
+            setvar(VAR_0x8005, MOVE_HOLD_HANDS)
+            goto(TeachTutorMove)
+        case 84:
+            setvar(VAR_0x8005, MOVE_SCREECH)
+            goto(TeachTutorMove)
+        case 85:
+            setvar(VAR_0x8005, MOVE_GROWL)
+            goto(TeachTutorMove)
+        case 86:
+            setvar(VAR_0x8005, MOVE_FORESIGHT)
+            goto(TeachTutorMove)
+        case 87:
+            setvar(VAR_0x8005, MOVE_ODOR_SLEUTH)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script PoisonSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Smog", "Acid Spray", "Acid", "Clear Smog", "Venoshock", "Sludge", "Sludge Bomb", "Sludge Bomb", "Belch")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SMOG)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_ACID_SPRAY)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ACID)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_CLEAR_SMOG)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_VENOSHOCK)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_SLUDGE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_SLUDGE_BOMB)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_SLUDGE_WAVE)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_BELCH)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script PsychicSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Stored Power", "Confusion", "Psybeam", "Psychic Noise", "Psyshock", "Expanding Force", "Extrasensory", "Psychic", "Dream Eater", "Future Sight", "Synchronoise", "Psywave", "Mirror Coat")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_STORED_POWER)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_CONFUSION)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_PSYBEAM)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_PSYCHIC_NOISE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_PSYSHOCK)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_EXPANDING_FORCE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_EXTRASENSORY)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_PSYCHIC)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_DREAM_EATER)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_FUTURE_SIGHT)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_SYNCHRONOISE)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_PSYWAVE)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_MIRROR_COAT)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script RockSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Ancient Power", "Power Gem", "Meteor Beam")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_ANCIENT_POWER)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_POWER_GEM)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_METEOR_BEAM)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script SteelSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Mirror Shot", "Flash Cannon", "Steel Beam")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_MIRROR_SHOT)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_FLASH_CANNON)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_STEEL_BEAM)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script WaterSpecial {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Water Shuriken", "Whirlpool", "Water Gun", " Bubble", "Chilling Water", "Water Pulse", "Octazooka", "Brine", "Bubble Beam", "Water Pledge", "Scald", "Muddy Water", "Surf", "Hydro Pump", "Hydro Cannon", "Water Spout")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_WATER_SHURIKEN)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_WHIRLPOOL)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_WATER_GUN)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_BUBBLE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_CHILLING_WATER)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_WATER_PULSE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_OCTAZOOKA)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_BRINE)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_BUBBLE_BEAM)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_WATER_PLEDGE)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_SCALD)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_MUDDY_WATER)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_SURF)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_HYDRO_PUMP)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_HYDRO_CANNON)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_WATER_SPOUT)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+
+script MoveStatusTypeSelect {
+    lockall
+    setvar(VAR_0x8008, 5000)
+    checkmoney(5000)
+    goto_if_eq(VAR_RESULT, FALSE, TutorCantBuy)
+    msgbox("Welcome to the Status Move Counter,\nWhat move type do you want?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Bug", "Dark", "Dragon", "Eletric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water")
+    switch(var(VAR_RESULT)){
+        case 0:
+            msgbox("Bug Type Moves Selected.")
+            goto(BugStatus)
+        case 1:
+            msgbox("Dark Type Moves Selected.")
+            goto(DarkStatus)
+        case 2:
+            msgbox("Dragon Type Moves Selected.")
+            goto(DragonStatus)
+        case 3:
+            msgbox("Eletric Type Moves Selected.")
+            goto(ElectricStatus)
+        case 4:
+            msgbox("Fairy Type Moves Selected.")
+            goto(FairyStatus)
+        case 5:
+            msgbox("Fighting Type Moves Selected.")
+            goto(FightingStatus)
+        case 6:
+            msgbox("Fire Type Moves Selected.")
+            goto(FireStatus)
+        case 7:
+            msgbox("Flying Type Moves Selected.")
+            goto(FlyingStatus)
+        case 8:
+            msgbox("Ghost Type Moves Selected.")
+            goto(GhostStatus)
+        case 9:
+            msgbox("Grass Type Moves Selected.")
+            goto(GrassStatus)
+        case 10:
+            msgbox("Ground Type Moves Selected.")
+            goto(GroundStatus)
+        case 11:
+            msgbox("Ice Type Moves Selected.")
+            goto(IceStatus)
+        case 12:
+            msgbox("Normal Type Moves Selected.")
+            goto(NormalStatus)
+        case 13:
+            msgbox("Poison Type Moves Selected.")
+            goto(PoisonStatus)
+        case 14:
+            msgbox("Psychic Type Moves Selected.")
+            goto(PsychicStatus)
+        case 15:
+            msgbox("Rock Type Moves Selected.")
+            goto(RockStatus)
+        case 16:
+            msgbox("Steel Type Moves Selected.")
+            goto(SteelStatus)
+        case 17:
+            msgbox("Water Type Moves Selected.")
+            goto(WaterStatus)
+        case 127:
+            msgbox("Please Come Back Again!")
+            releaseall
+    }
+}
+
+script BugStatus {
+    msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Spider Web", "Tail Glow", "Rage Powder", "Quiver Dance", "Sticky Web", "Powder", "String Shot", )
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SPIDER_WEB)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_TAIL_GLOW)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_RAGE_POWDER)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_QUIVER_DANCE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_STICKY_WEB)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_POWDER)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_STRING_SHOT)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script DarkStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Snatch", "Memento", "Switcheroo", "Hone Claws", "Torment", "Flatter", "Embargo", "Quash", "Nasty Plot", "Taunt", "Fake Tears", "Parting Shot")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SNATCH)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_MEMENTO)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_SWITCHEROO)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_HONE_CLAWS)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_TORMENT)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_FLATTER)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_EMBARGO)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_QUASH)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_NASTY_PLOT)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_TAUNT)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_FAKE_TEARS)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_PARTING_SHOT)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script DragonStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Dragon Cheer", "Dragon Dance")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_DRAGON_CHEER)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_DRAGON_DANCE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script ElectricStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Magnet Rise", "Electric Terrain", "Eerie Impulse", "Charge", "Magnetic Flux", "Thunder Wave", "Electrify", "Ion Deluge")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_MAGNET_RISE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_ELECTRIC_TERRAIN)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_EERIE_IMPULSE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_CHARGE)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_MAGNETIC_FLUX)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_THUNDER_WAVE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_ELECTRIFY)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_ION_DELUGE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FairyStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Moonlight", "Crafty Shield", "Flower Shield", "Misty Terrain", "Sweet Kiss", "Aromatic Mist", "Charm", "Baby Doll Eyes")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_MOONLIGHT)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_CRAFTY_SHIELD)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_FLOWER_SHIELD)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_MISTY_TERRAIN)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_SWEET_KISS)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_AROMATIC_MIST)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_CHARM)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_BABY_DOLL_EYES)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FightingStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Detect", "Mat Block", "Coaching", "Quick Guard", "Bulk Up")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_DETECT)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_MAT_BLOCK)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_COACHING)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_QUICK_GUARD)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_BULK_UP)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FireStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Sunny Day", "Will-O Wisp")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SUNNY_DAY)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_WILL_O_WISP)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script FlyingStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Roost", "Tailwind", "Feather Dance", "Defog", "Mirror Move")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_ROOST)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_TAILWIND)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_FEATHER_DANCE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_DEFOG)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_MIRROR_MOVE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GhostStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Destiny Bond", "Grudge", "Curse", "Confuse Ray", "Spite", "Nightmare")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_DESTINY_BOND)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_GRUDGE)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_CURSE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_CONFUSE_RAY)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_SPITE)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_NIGHTMARE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GrassStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Synthesis", "Aromatherapy", "Cotton Guard", "Grassy Terrain", "Spiky Shield", "Leech Seed", "Worry Seed", "Strengh Sap", "Grass Whistle", "Sleep Power", "Spore", "Ingrain", "Stun Spore", "Cotton Spore")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SYNTHESIS)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_AROMATHERAPY)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_COTTON_GUARD)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_GRASSY_TERRAIN)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_SPIKY_SHIELD)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_LEECH_SEED)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_WORRY_SEED)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_STRENGTH_SAP)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_GRASS_WHISTLE)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_SLEEP_POWDER)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_SPORE)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_INGRAIN)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_STUN_SPORE)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_COTTON_SPORE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script GroundStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Rototiller", "Mud Sport", "Sand Attack", "Spikes")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_ROTOTILLER)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_MUD_SPORT)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_SAND_ATTACK)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_SPIKES)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script IceStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Hail", "Aurora Veil", "Mist", "Haze")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_HAIL)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_AURORA_VEIL)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_MIST)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_HAZE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script NormalStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Power Trip", "Payback", "Assurance", "Brutal Swing", "Feint Attack", "Bite", "Sucker Punch", "Night Slash", "Lash Out", "Jaw Lock", "Darkest Lariat", "Foul Play", "Punishment", "Beat Up", "Fling", "Comeuppance")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_POWER_TRIP)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_PAYBACK)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ASSURANCE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_BRUTAL_SWING)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_FEINT_ATTACK)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_BITE)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_SUCKER_PUNCH)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_NIGHT_SLASH)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_LASH_OUT)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_JAW_LOCK)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_DARKEST_LARIAT)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_FOUL_PLAY)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_PUNISHMENT)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_BEAT_UP)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_FLING)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_COMEUPPANCE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script PoisonStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Toxic", "Gastro Acid", "Acid Armor", "Toxic Spikes", "Coil", "Venom Drench", "Poison Powder", "Poison Gas", "Corrosive Gas")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_TOXIC)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_GASTRO_ACID)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ACID_ARMOR)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_TOXIC_SPIKES)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_COIL)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_VENOM_DRENCH)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_POISON_POWDER)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_POISON_GAS)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_CORROSIVE_GAS)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script PsychicStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Rest", "Gravity", "Trick Room", "Imprison", "Healing Wish", "Power Trick", "Wonder Room", "Magic Room", "Psychic Terrain", "Trick", "Psycho Shift", "Role Play", "Skill Swap", "Power Swap", "Guard Swap", "Guard Split", "Power Split", "Heal Pulse", "Speed Swap", "Magic Coat", "Ally Switch", "Heal Block", "Telekinesis", "Teleport", "Barrier", "Reflect", "Amnesia", "Cosmic Power", "Calm Mind", "Hypnosis", "Agility", "Light Screen", "Meditate", "Miracle Eye")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_REST)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_GRAVITY)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_TRICK_ROOM)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_IMPRISON)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_HEALING_WISH)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_POWER_TRICK)
+            goto(TeachTutorMove)
+        case 6:
+            setvar(VAR_0x8005, MOVE_WONDER_ROOM)
+            goto(TeachTutorMove)
+        case 7:
+            setvar(VAR_0x8005, MOVE_MAGIC_ROOM)
+            goto(TeachTutorMove)
+        case 8:
+            setvar(VAR_0x8005, MOVE_PSYCHIC_TERRAIN)
+            goto(TeachTutorMove)
+        case 9:
+            setvar(VAR_0x8005, MOVE_TRICK)
+            goto(TeachTutorMove)
+        case 10:
+            setvar(VAR_0x8005, MOVE_PSYCHO_SHIFT)
+            goto(TeachTutorMove)
+        case 11:
+            setvar(VAR_0x8005, MOVE_ROLE_PLAY)
+            goto(TeachTutorMove)
+        case 12:
+            setvar(VAR_0x8005, MOVE_SKILL_SWAP)
+            goto(TeachTutorMove)
+        case 13:
+            setvar(VAR_0x8005, MOVE_POWER_SWAP)
+            goto(TeachTutorMove)
+        case 14:
+            setvar(VAR_0x8005, MOVE_GUARD_SWAP)
+            goto(TeachTutorMove)
+        case 15:
+            setvar(VAR_0x8005, MOVE_GUARD_SPLIT)
+            goto(TeachTutorMove)
+        case 16:
+            setvar(VAR_0x8005, MOVE_POWER_SPLIT)
+            goto(TeachTutorMove)
+        case 17:
+            setvar(VAR_0x8005, MOVE_HEAL_PULSE)
+            goto(TeachTutorMove)
+        case 18:
+            setvar(VAR_0x8005, MOVE_SPEED_SWAP)
+            goto(TeachTutorMove)
+        case 19:
+            setvar(VAR_0x8005, MOVE_MAGIC_COAT)
+            goto(TeachTutorMove)
+        case 20:
+            setvar(VAR_0x8005, MOVE_ALLY_SWITCH)
+            goto(TeachTutorMove)
+        case 21:
+            setvar(VAR_0x8005, MOVE_HEAL_BLOCK)
+            goto(TeachTutorMove)
+        case 22:
+            setvar(VAR_0x8005, MOVE_TELEKINESIS)
+            goto(TeachTutorMove)
+        case 23:
+            setvar(VAR_0x8005, MOVE_TELEPORT)
+            goto(TeachTutorMove)
+        case 24:
+            setvar(VAR_0x8005, MOVE_BARRIER)
+            goto(TeachTutorMove)
+        case 25:
+            setvar(VAR_0x8005, MOVE_REFLECT)
+            goto(TeachTutorMove)
+        case 26:
+            setvar(VAR_0x8005, MOVE_AMNESIA)
+            goto(TeachTutorMove)
+        case 27:
+            setvar(VAR_0x8005, MOVE_COSMIC_POWER)
+            goto(TeachTutorMove)
+        case 28:
+            setvar(VAR_0x8005, MOVE_CALM_MIND)
+            goto(TeachTutorMove)
+        case 29:
+            setvar(VAR_0x8005, MOVE_HYPNOSIS)
+            goto(TeachTutorMove)
+        case 30:
+            setvar(VAR_0x8005, MOVE_AGILITY)
+            goto(TeachTutorMove)
+        case 31:
+            setvar(VAR_0x8005, MOVE_LIGHT_SCREEN)
+            goto(TeachTutorMove)
+        case 32:
+            setvar(VAR_0x8005, MOVE_MEDITATE)
+            goto(TeachTutorMove)
+        case 33:
+            setvar(VAR_0x8005, MOVE_MIRACLE_EYE)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script RockStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Sandstorm", "Wide Guard", "Rock Polish", "Stealth Rock")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SANDSTORM)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_WIDE_GUARD)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_ROCK_POLISH)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_STEALTH_ROCK)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script SteelStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Shift Gear", "Iron Defence", "Autotomize", "Gear Up", "Metal Sound")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_SHIFT_GEAR)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_IRON_DEFENSE)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_AUTOTOMIZE)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_GEAR_UP)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_METAL_SOUND)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+script WaterStatus {
+   msgbox("Which move do you want to learn?")
+    dynmultichoice(0,0,FALSE,6,0,FALSE, "Rain Dance", "Life Dew", "Water Sport", "Aqua Ring", "Soak", "Withdraw")
+    switch(var(VAR_RESULT)){
+        case 0:
+            setvar(VAR_0x8005, MOVE_RAIN_DANCE)
+            goto(TeachTutorMove)
+        case 1:
+            setvar(VAR_0x8005, MOVE_LIFE_DEW)
+            goto(TeachTutorMove)
+        case 2:
+            setvar(VAR_0x8005, MOVE_WATER_SPORT)
+            goto(TeachTutorMove)
+        case 3:
+            setvar(VAR_0x8005, MOVE_AQUA_RING)
+            goto(TeachTutorMove)
+        case 4:
+            setvar(VAR_0x8005, MOVE_SOAK)
+            goto(TeachTutorMove)
+        case 5:
+            setvar(VAR_0x8005, MOVE_WITHDRAW)
+            goto(TeachTutorMove)
+        case 127:
+            goto(TutorRefuse)
+    }
+}
+
+script TutorRefuse {
+    msgbox("Come back if you change your mind.")
+    releaseall
+}
+
+script TutorExitMoveTeach {
+    msgbox("Come back if you change your mind.")
+    releaseall
+}
+
+script TutorCantBuy {
+    msgbox("Sorry, You dont have enought money!")
+    releaseall
+}
+
+script TeachTutorMove {
+    msgbox("Who to teach move to?")
+    special(ChooseMonForMoveTutor)
+    waitstate
+    goto_if_eq(VAR_RESULT, FALSE, TutorExitMoveTeach)
+    removemoney(5000)
+    msgbox("Thankyou, come back soon!")
+    releaseall
+    end
+}

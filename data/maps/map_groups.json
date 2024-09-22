@@ -1,5 +1,6 @@
 {
   "group_order": [
+    "gMapGroup_MoveTutorInt",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -94,6 +95,10 @@
     "Underwater_Route105",
     "Underwater_Route125",
     "TestRElm"
+  ],
+  "gMapGroup_MoveTutorInt": [
+    "PledgeMoveTutorHouse",
+    "TypeMastersHouse"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

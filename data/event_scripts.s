@@ -1076,3 +1076,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/TestRElm/scripts.inc"
+
+	.include "data/maps/PledgeMoveTutorHouse/scripts.inc"
+
+	.include "data/maps/TypeMastersHouse/scripts.inc"

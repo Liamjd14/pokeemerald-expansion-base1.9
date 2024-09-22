@@ -4420,6 +4420,26 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/TestRElm/border.bin",
       "blockdata_filepath": "data/layouts/TestRElm/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLEDGE_MOVE_TUTOR_HOUSE",
+      "name": "PledgeMoveTutorHouse_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PledgeMoveTutorHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PledgeMoveTutorHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_TYPE_MASTERS_HOUSE",
+      "name": "TypeMastersHouse_Layout",
+      "width": 40,
+      "height": 11,
+      "primary_tileset": "gTileset_frp_building",
+      "secondary_tileset": "gTileset_frp_lab",
+      "border_filepath": "data/layouts/TypeMastersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/TypeMastersHouse/map.bin"
     }
   ]
 }

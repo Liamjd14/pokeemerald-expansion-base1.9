@@ -235,7 +235,7 @@
       "x": 7,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_TEST_RELM",
+      "dest_map": "MAP_TYPE_MASTERS_HOUSE",
       "dest_warp_id": "0"
     },
     {
