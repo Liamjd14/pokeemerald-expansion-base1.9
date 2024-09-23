@@ -6075,7 +6075,7 @@ static const u16 sDrampaEggMoveLearnset[] = {
 #endif //P_FAMILY_DRAMPA
 
 #if P_FAMILY_JANGMO_O
-static const u16 sJangmooEggMoveLearnset[] = {
+static const u16 sJangmoOEggMoveLearnset[] = {
     MOVE_COUNTER,
     MOVE_DRAGON_BREATH,
     MOVE_FOCUS_PUNCH,
