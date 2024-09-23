@@ -1080,3 +1080,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PledgeMoveTutorHouse/scripts.inc"
 
 	.include "data/maps/TypeMastersHouse/scripts.inc"
+
+	.include "data/maps/Route1HiddenGrotto/scripts.inc"
+
+	.include "data/maps/Oceanview/scripts.inc"

@@ -393,3 +393,12 @@ const u16 gMetatileAttributes_frp_silph_co[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_frp_building[] = INCBIN_U16("data/tilesets/primary/frp_building/metatiles.bin");
 const u16 gMetatileAttributes_frp_building[] = INCBIN_U16("data/tilesets/primary/frp_building/metatile_attributes.bin");
+
+const u16 gMetatiles_ESGeneralRoute[] = INCBIN_U16("data/tilesets/secondary/esgeneral_route/metatiles.bin");
+const u16 gMetatileAttributes_ESGeneralRoute[] = INCBIN_U16("data/tilesets/secondary/esgeneral_route/metatile_attributes.bin");
+
+const u16 gMetatiles_ES_General[] = INCBIN_U16("data/tilesets/primary/es_general/metatiles.bin");
+const u16 gMetatileAttributes_ES_General[] = INCBIN_U16("data/tilesets/primary/es_general/metatile_attributes.bin");
+
+const u16 gMetatiles_ES_Oceanview[] = INCBIN_U16("data/tilesets/secondary/es_oceanview/metatiles.bin");
+const u16 gMetatileAttributes_ES_Oceanview[] = INCBIN_U16("data/tilesets/secondary/es_oceanview/metatile_attributes.bin");

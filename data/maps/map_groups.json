@@ -1,5 +1,9 @@
 {
   "group_order": [
+    "gMapGroup_EshosTowns",
+    "gMapGroup_EshosRoutes",
+    "gMapGroup_EshosWilderness",
+    "gMapGroup_EshosHiddenGrottos",
     "gMapGroup_MoveTutorInt",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
@@ -35,6 +39,22 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124"
+  ],
+  "gMapGroup_EshosTowns": [
+    "Oceanview"
+  ],
+  "gMapGroup_EshosRoutes": [
+
+  ],
+  "gMapGroup_EshosWilderness": [
+
+  ],
+  "gMapGroup_EshosHiddenGrottos": [
+    "Route1HiddenGrotto"
+  ],
+  "gMapGroup_MoveTutorInt": [
+    "PledgeMoveTutorHouse",
+    "TypeMastersHouse"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -95,10 +115,6 @@
     "Underwater_Route105",
     "Underwater_Route125",
     "TestRElm"
-  ],
-  "gMapGroup_MoveTutorInt": [
-    "PledgeMoveTutorHouse",
-    "TypeMastersHouse"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

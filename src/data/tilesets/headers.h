@@ -834,7 +834,7 @@ const struct Tileset gTileset_frp_general =
     .palettes = gTilesetPalettes_frp_general,
     .metatiles = gMetatiles_frp_general,
     .metatileAttributes = gMetatileAttributes_frp_general,
-    .callback = NULL,
+    .callback = InitTilesetAnim_frp_general,
 };
 
 const struct Tileset gTileset_frp_berry_forest =
@@ -1505,5 +1505,38 @@ const struct Tileset gTileset_frp_building =
     .palettes = gTilesetPalettes_frp_building,
     .metatiles = gMetatiles_frp_building,
     .metatileAttributes = gMetatileAttributes_frp_building,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_ESGeneralRoute =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ESGeneralRoute,
+    .palettes = gTilesetPalettes_ESGeneralRoute,
+    .metatiles = gMetatiles_ESGeneralRoute,
+    .metatileAttributes = gMetatileAttributes_ESGeneralRoute,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_ES_General =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_ES_General,
+    .palettes = gTilesetPalettes_ES_General,
+    .metatiles = gMetatiles_ES_General,
+    .metatileAttributes = gMetatileAttributes_ES_General,
+    .callback = InitTilesetAnim_es_General,
+};
+
+const struct Tileset gTileset_ES_Oceanview =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_ES_Oceanview,
+    .palettes = gTilesetPalettes_ES_Oceanview,
+    .metatiles = gMetatiles_ES_Oceanview,
+    .metatileAttributes = gMetatileAttributes_ES_Oceanview,
     .callback = NULL,
 };
