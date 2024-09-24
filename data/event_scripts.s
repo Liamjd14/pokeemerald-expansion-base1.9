@@ -1152,3 +1152,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/A1_TestRelm/scripts.inc"
+
+	.include "data/maps/A2_T_ES_Oceanview/scripts.inc"

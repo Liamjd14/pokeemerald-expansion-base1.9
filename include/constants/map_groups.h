@@ -6,8 +6,8 @@
 //
 
 // gMapGroup_EshosTowns
-#define MAP_A1_TEST_RELM   (0 | (0 << 8))
-#define MAP_A2_T_OCEANVIEW (1 | (0 << 8))
+#define MAP_A1_TEST_RELM      (0 | (0 << 8))
+#define MAP_A2_T_ES_OCEANVIEW (1 | (0 << 8))
 
 // gMapGroup_EshosRoutes
 
