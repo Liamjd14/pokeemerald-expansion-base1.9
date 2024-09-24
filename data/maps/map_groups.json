@@ -1,5 +1,10 @@
 {
   "group_order": [
+    "gMapGroup_EshosTowns",
+    "gMapGroup_EshosRoutes",
+    "gMapGroup_EshosWilderness",
+    "gMapGroup_EshosHiddenGrottos",
+    "gMapGroup_MoveTutorInt",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -34,6 +39,21 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124"
+  ],
+  "gMapGroup_EshosTowns": [
+    "A1_TestRelm"
+  ],
+  "gMapGroup_EshosRoutes": [
+
+  ],
+  "gMapGroup_EshosWilderness": [
+
+  ],
+  "gMapGroup_EshosHiddenGrottos": [
+
+  ],
+  "gMapGroup_MoveTutorInt": [
+
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -92,8 +112,7 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125",
-    "TestRelm"
+    "Underwater_Route125"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
