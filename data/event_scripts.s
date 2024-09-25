@@ -1154,3 +1154,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/A1_TestRelm/scripts.inc"
 
 	.include "data/maps/A2_T_ES_Oceanview/scripts.inc"
+
+	.include "data/maps/A2_R_ES_JewelbankRiver/scripts.inc"
+
+	.include "data/maps/A2_T_ES_ProfessorsHouse/scripts.inc"
+
+	.include "data/maps/A2_C_ES_OceanviewCave/scripts.inc"
+
+	.include "data/maps/A2_C_ES_ProfessorsReserchCave/scripts.inc"
+
+	.include "data/maps/A2_R_ES_JewelbankRiverNorth/scripts.inc"

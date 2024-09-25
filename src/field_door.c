@@ -132,7 +132,6 @@ static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/door_anims/trainer_hill_roof_elevator.4bpp");
 static const u16 sDoorNullPalette49[16] = {};
 static const u8 sDoorAnimTiles_Pallet[] = INCBIN_U8("graphics/door_anims/pallet.4bpp");
-static const u16 sDoorNullPalette50[16] = {};
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {

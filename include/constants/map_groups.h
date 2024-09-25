@@ -6,16 +6,21 @@
 //
 
 // gMapGroup_EshosTowns
-#define MAP_A1_TEST_RELM      (0 | (0 << 8))
-#define MAP_A2_T_ES_OCEANVIEW (1 | (0 << 8))
+#define MAP_A1_TEST_RELM             (0 | (0 << 8))
+#define MAP_A2_T_ES_OCEANVIEW        (1 | (0 << 8))
+#define MAP_A2_T_ES_PROFESSORS_HOUSE (2 | (0 << 8))
 
 // gMapGroup_EshosRoutes
+#define MAP_A2_R_ES_JEWELBANK_RIVER       (0 | (1 << 8))
+#define MAP_A2_R_ES_JEWELBANK_RIVER_NORTH (1 | (1 << 8))
 
 // gMapGroup_EshosWilderness
 
 // gMapGroup_EshosHiddenGrottos
 
 // gMapGroup_MoveTutorInt
+#define MAP_A2_C_ES_OCEANVIEW_CAVE          (0 | (4 << 8))
+#define MAP_A2_C_ES_PROFESSORS_RESERCH_CAVE (1 | (4 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (5 << 8))

@@ -42,10 +42,12 @@
   ],
   "gMapGroup_EshosTowns": [
     "A1_TestRelm",
-    "A2_T_ES_Oceanview"
+    "A2_T_ES_Oceanview",
+    "A2_T_ES_ProfessorsHouse"
   ],
   "gMapGroup_EshosRoutes": [
-
+    "A2_R_ES_JewelbankRiver",
+    "A2_R_ES_JewelbankRiverNorth"
   ],
   "gMapGroup_EshosWilderness": [
 
@@ -54,7 +56,8 @@
 
   ],
   "gMapGroup_MoveTutorInt": [
-
+    "A2_C_ES_OceanviewCave",
+    "A2_C_ES_ProfessorsReserchCave"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

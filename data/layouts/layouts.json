@@ -4430,6 +4430,56 @@
       "secondary_tileset": "gTileset_ES_Oceanview",
       "border_filepath": "data/layouts/A2_T_ES_Oceanview/border.bin",
       "blockdata_filepath": "data/layouts/A2_T_ES_Oceanview/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_R_ES_JEWELBANK_RIVER",
+      "name": "A2_R_ES_JewelbankRiver_Layout",
+      "width": 30,
+      "height": 40,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_R_ES_JewelbankRiver/border.bin",
+      "blockdata_filepath": "data/layouts/A2_R_ES_JewelbankRiver/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_T_ES_PROFESSORS_HOUSE",
+      "name": "A2_T_ES_ProfessorsHouse_Layout",
+      "width": 60,
+      "height": 40,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_T_ES_ProfessorsHouse/border.bin",
+      "blockdata_filepath": "data/layouts/A2_T_ES_ProfessorsHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_C_ES_OCEANVIEW_CAVE",
+      "name": "A2_C_ES_OceanviewCave_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/A2_C_ES_OceanviewCave/border.bin",
+      "blockdata_filepath": "data/layouts/A2_C_ES_OceanviewCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_C_ES_PROFESSORS_RESERCH_CAVE",
+      "name": "A2_C_ES_ProfessorsReserchCave_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/A2_C_ES_ProfessorsReserchCave/border.bin",
+      "blockdata_filepath": "data/layouts/A2_C_ES_ProfessorsReserchCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_R_ES_JEWELBANK_RIVER_NORTH",
+      "name": "A2_R_ES_JewelbankRiverNorth_Layout",
+      "width": 30,
+      "height": 50,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_R_ES_JewelbankRiverNorth/border.bin",
+      "blockdata_filepath": "data/layouts/A2_R_ES_JewelbankRiverNorth/map.bin"
     }
   ]
 }
