@@ -1,0 +1,34 @@
+{
+  "id": "MAP_A2_R_ES_JEWELBANK_RIVER_NORTH",
+  "name": "A2_R_ES_JewelbankRiverNorth",
+  "layout": "LAYOUT_A2_R_ES_JEWELBANK_RIVER_NORTH",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_A2_R_ES_JEWELBANK_RIVER",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

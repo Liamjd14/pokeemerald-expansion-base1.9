@@ -12,7 +12,13 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_A2_R_ES_JEWELBANK_RIVER",
+      "offset": 0,
+      "direction": "left"
+    }
+  ],
   "object_events": [
 
   ],
@@ -21,12 +27,33 @@
       "x": 16,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_A2_T_ES_OCEANVIEW",
+      "dest_map": "MAP_DYNAMIC",
       "dest_warp_id": "1"
     },
     {
       "x": 29,
       "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_A2_T_ES_OCEANVIEW",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_A2_C_ES_OCEANVIEW_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_A2_T_ES_OCEANVIEW",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_A2_T_ES_OCEANVIEW",
       "dest_warp_id": "0"
@@ -36,6 +63,44 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "secret_base",
+      "x": 24,
+      "y": 32,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_1"
+    }
   ]
 }
