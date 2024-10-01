@@ -1164,3 +1164,19 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/A2_C_ES_ProfessorsReserchCave/scripts.inc"
 
 	.include "data/maps/A2_R_ES_JewelbankRiverNorth/scripts.inc"
+
+	.include "data/maps/A2_T_ES_Jewelbank/scripts.inc"
+
+	.include "data/maps/A2_L_ES_LilyflowerLake/scripts.inc"
+
+	.include "data/maps/A2_W_ES_JewelbankWildsSouth/scripts.inc"
+
+	.include "data/maps/A2_W_ES_JewelbankWildsNorth/scripts.inc"
+
+	.include "data/maps/A2_R_ES_MTCindershardBase/scripts.inc"
+
+	.include "data/maps/A2_R_ES_ShadewindForrestExt/scripts.inc"
+
+	.include "data/maps/A2_F_ES_ShadewindForrest/scripts.inc"
+
+	.include "data/maps/A2_F_ES_ShadewindForrestArena/scripts.inc"

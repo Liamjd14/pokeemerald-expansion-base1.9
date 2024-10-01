@@ -1,0 +1,50 @@
+{
+  "id": "MAP_A2_R_ES_MTCINDERSHARD_BASE",
+  "name": "A2_R_ES_MTCindershardBase",
+  "layout": "LAYOUT_A2_R_ES_MTCINDERSHARD_BASE",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_A2_T_ES_JEWELBANK",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_A2_W_ES_JEWELBANK_WILDS_NORTH",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_A2_R_ES_SHADEWIND_FORREST_EXT",
+      "offset": 0,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 28,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_A2_R_ES_MTCINDERSHARD_BASE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

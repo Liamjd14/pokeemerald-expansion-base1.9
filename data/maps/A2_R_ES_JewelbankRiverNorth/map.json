@@ -5,8 +5,8 @@
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -17,6 +17,26 @@
       "map": "MAP_A2_R_ES_JEWELBANK_RIVER",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_A2_L_ES_LILYFLOWER_LAKE",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_A2_T_ES_PROFESSORS_HOUSE",
+      "offset": 50,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_A2_T_ES_JEWELBANK",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -29,6 +49,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }
