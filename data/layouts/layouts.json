@@ -4480,6 +4480,86 @@
       "secondary_tileset": "gTileset_ES_Oceanview",
       "border_filepath": "data/layouts/A2_R_ES_JewelbankRiverNorth/border.bin",
       "blockdata_filepath": "data/layouts/A2_R_ES_JewelbankRiverNorth/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_T_ES_JEWELBANK",
+      "name": "A2_T_ES_Jewelbank_Layout",
+      "width": 70,
+      "height": 20,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_T_ES_Jewelbank/border.bin",
+      "blockdata_filepath": "data/layouts/A2_T_ES_Jewelbank/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_L_ES_LILYFLOWER_LAKE",
+      "name": "A2_L_ES_LilyflowerLake_Layout",
+      "width": 60,
+      "height": 50,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_L_ES_LilyflowerLake/border.bin",
+      "blockdata_filepath": "data/layouts/A2_L_ES_LilyflowerLake/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+      "name": "A2_W_ES_JewelbankWildsSouth_Layout",
+      "width": 40,
+      "height": 50,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_W_ES_JewelbankWildsSouth/border.bin",
+      "blockdata_filepath": "data/layouts/A2_W_ES_JewelbankWildsSouth/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_W_ES_JEWELBANK_WILDS_NORTH",
+      "name": "A2_W_ES_JewelbankWildsNorth_Layout",
+      "width": 50,
+      "height": 40,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_W_ES_JewelbankWildsNorth/border.bin",
+      "blockdata_filepath": "data/layouts/A2_W_ES_JewelbankWildsNorth/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_R_ES_MTCINDERSHARD_BASE",
+      "name": "A2_R_ES_MTCindershardBase_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_R_ES_MTCindershardBase/border.bin",
+      "blockdata_filepath": "data/layouts/A2_R_ES_MTCindershardBase/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_R_ES_SHADEWIND_FORREST_EXT",
+      "name": "A2_R_ES_ShadewindForrestExt_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_R_ES_ShadewindForrestExt/border.bin",
+      "blockdata_filepath": "data/layouts/A2_R_ES_ShadewindForrestExt/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_F_ES_SHADEWIND_FORREST",
+      "name": "A2_F_ES_ShadewindForrest_Layout",
+      "width": 80,
+      "height": 80,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_F_ES_ShadewindForrest/border.bin",
+      "blockdata_filepath": "data/layouts/A2_F_ES_ShadewindForrest/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_F_ES_SHADEWIND_FORREST_ARENA",
+      "name": "A2_F_ES_ShadewindForrestArena_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_ES_General",
+      "secondary_tileset": "gTileset_ES_Oceanview",
+      "border_filepath": "data/layouts/A2_F_ES_ShadewindForrestArena/border.bin",
+      "blockdata_filepath": "data/layouts/A2_F_ES_ShadewindForrestArena/map.bin"
     }
   ]
 }

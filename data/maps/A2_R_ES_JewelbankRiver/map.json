@@ -3,10 +3,10 @@
   "name": "A2_R_ES_JewelbankRiver",
   "layout": "LAYOUT_A2_R_ES_JEWELBANK_RIVER",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_107",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -27,6 +27,11 @@
       "map": "MAP_A2_R_ES_JEWELBANK_RIVER_NORTH",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+      "offset": -50,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -39,6 +44,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }

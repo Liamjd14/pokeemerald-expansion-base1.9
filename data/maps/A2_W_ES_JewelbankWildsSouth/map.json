@@ -1,0 +1,82 @@
+{
+  "id": "MAP_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+  "name": "A2_W_ES_JewelbankWildsSouth",
+  "layout": "LAYOUT_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_A2_T_ES_OCEANVIEW",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_A2_R_ES_JEWELBANK_RIVER",
+      "offset": 50,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_A2_R_ES_JEWELBANK_RIVER_NORTH",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_A2_T_ES_JEWELBANK",
+      "offset": -30,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 23,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "secret_base",
+      "x": 22,
+      "y": 15,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_1"
+    },
+    {
+      "type": "secret_base",
+      "x": 25,
+      "y": 35,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_1"
+    },
+    {
+      "type": "secret_base",
+      "x": 24,
+      "y": 35,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_1"
+    }
+  ]
+}

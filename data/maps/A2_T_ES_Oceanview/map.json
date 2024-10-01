@@ -5,8 +5,8 @@
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -17,6 +17,11 @@
       "map": "MAP_A2_R_ES_JEWELBANK_RIVER",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_A2_W_ES_JEWELBANK_WILDS_SOUTH",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [

@@ -5,8 +5,8 @@
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -16,6 +16,16 @@
     {
       "map": "MAP_A2_R_ES_JEWELBANK_RIVER",
       "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_A2_L_ES_LILYFLOWER_LAKE",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_A2_R_ES_JEWELBANK_RIVER_NORTH",
+      "offset": -50,
       "direction": "right"
     }
   ],
@@ -43,6 +53,27 @@
       "elevation": 0,
       "dest_map": "MAP_A2_T_ES_PROFESSORS_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_A2_T_ES_PROFESSORS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_A2_T_ES_PROFESSORS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_A2_T_ES_PROFESSORS_HOUSE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -61,6 +92,22 @@
       "type": "sign",
       "x": 51,
       "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 40,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"

@@ -43,21 +43,28 @@
   "gMapGroup_EshosTowns": [
     "A1_TestRelm",
     "A2_T_ES_Oceanview",
-    "A2_T_ES_ProfessorsHouse"
+    "A2_T_ES_ProfessorsHouse",
+    "A2_T_ES_Jewelbank"
   ],
   "gMapGroup_EshosRoutes": [
     "A2_R_ES_JewelbankRiver",
-    "A2_R_ES_JewelbankRiverNorth"
+    "A2_R_ES_JewelbankRiverNorth",
+    "A2_L_ES_LilyflowerLake",
+    "A2_R_ES_MTCindershardBase",
+    "A2_R_ES_ShadewindForrestExt"
   ],
   "gMapGroup_EshosWilderness": [
-
+    "A2_W_ES_JewelbankWildsSouth",
+    "A2_W_ES_JewelbankWildsNorth"
   ],
   "gMapGroup_EshosHiddenGrottos": [
 
   ],
   "gMapGroup_MoveTutorInt": [
     "A2_C_ES_OceanviewCave",
-    "A2_C_ES_ProfessorsReserchCave"
+    "A2_C_ES_ProfessorsReserchCave",
+    "A2_F_ES_ShadewindForrest",
+    "A2_F_ES_ShadewindForrestArena"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
