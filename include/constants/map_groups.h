@@ -10,6 +10,7 @@
 #define MAP_A2_T_ES_OCEANVIEW        (1 | (0 << 8))
 #define MAP_A2_T_ES_PROFESSORS_HOUSE (2 | (0 << 8))
 #define MAP_A2_T_ES_JEWELBANK        (3 | (0 << 8))
+#define MAP_A2_T_ES_MAYCASTLE        (4 | (0 << 8))
 
 // gMapGroup_EshosRoutes
 #define MAP_A2_R_ES_JEWELBANK_RIVER       (0 | (1 << 8))

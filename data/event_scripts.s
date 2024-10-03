@@ -1180,3 +1180,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/A2_F_ES_ShadewindForrest/scripts.inc"
 
 	.include "data/maps/A2_F_ES_ShadewindForrestArena/scripts.inc"
+
+	.include "data/maps/A2_T_ES_Maycastle/scripts.inc"
