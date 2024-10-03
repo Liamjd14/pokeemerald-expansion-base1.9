@@ -4560,6 +4560,16 @@
       "secondary_tileset": "gTileset_ES_Oceanview",
       "border_filepath": "data/layouts/A2_F_ES_ShadewindForrestArena/border.bin",
       "blockdata_filepath": "data/layouts/A2_F_ES_ShadewindForrestArena/map.bin"
+    },
+    {
+      "id": "LAYOUT_A2_T_ES_MAYCASTLE",
+      "name": "A2_T_ES_Maycastle_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/A2_T_ES_Maycastle/border.bin",
+      "blockdata_filepath": "data/layouts/A2_T_ES_Maycastle/map.bin"
     }
   ]
 }
