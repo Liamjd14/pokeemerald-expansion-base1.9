@@ -3,8 +3,8 @@
     {
       "map_section": "MAPSEC_LITTLEROOT_TOWN",
       "name": "LITTLEROOT TOWN",
-      "x": 12,
-      "y": 14,
+      "x": 8,
+      "y": 11,
       "width": 1,
       "height": 1
     },
@@ -1115,8 +1115,8 @@
     {
       "map_section": "MAPSEC_SEAFOAM_ISLANDS",
       "name": "SEAFOAM ISLANDS",
-      "x": 0,
-      "y": 0,
+      "x": 9,
+      "y": 11,
       "width": 1,
       "height": 1
     },

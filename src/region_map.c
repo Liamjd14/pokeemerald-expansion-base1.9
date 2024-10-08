@@ -38,8 +38,8 @@
  *
  */
 
-#define MAP_WIDTH 35
-#define MAP_HEIGHT 30
+#define MAP_WIDTH 30
+#define MAP_HEIGHT 18
 #define MAPCURSOR_X_MIN 1
 #define MAPCURSOR_Y_MIN 2
 #define MAPCURSOR_X_MAX (MAPCURSOR_X_MIN + MAP_WIDTH - 1)
