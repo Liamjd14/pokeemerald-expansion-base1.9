@@ -3,7 +3,7 @@
   "name": "A2_T_ES_Jewelbank",
   "layout": "LAYOUT_A2_T_ES_JEWELBANK",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_JEWLBANK",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_TOWN",
