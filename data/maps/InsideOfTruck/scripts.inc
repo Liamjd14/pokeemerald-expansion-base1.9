@@ -54,6 +54,7 @@ InsideOfTruck_EventScript_MovingBox::
 InsideOfTruck_EventScript_SetFlags::
 	setflag FLAG_SYS_DEXNAV_GET
 	setflag FLAG_SYS_DETECTOR_MODE
+	setvar VAR_UNUSED_0x404E, 2
 	return
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
