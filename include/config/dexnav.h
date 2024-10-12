@@ -13,9 +13,9 @@
 #define DEXNAV_CHAIN_MAX                100 // maximum chain value
 
 //hidden pokemon options - no info so I just guessed at values
-#define HIDDEN_MON_STEP_COUNT       100  //look for hidden pokemon every x steps
-#define HIDDEN_MON_SEARCH_RATE      25  //x% chance of finding hidden pokemon every x steps
-#define HIDDEN_MON_PROBABILTY       15  //x% chance of finding hidden mon compared to regular encounter data
+#define HIDDEN_MON_STEP_COUNT       1  //look for hidden pokemon every x steps
+#define HIDDEN_MON_SEARCH_RATE      50  //x% chance of finding hidden pokemon every x steps
+#define HIDDEN_MON_PROBABILTY       25  //x% chance of finding hidden mon compared to regular encounter data
 
 //// SEARCH PROBABILITIES
 // see https://m.bulbapedia.bulbagarden.net/wiki/DexNav#Benefits
@@ -27,7 +27,7 @@
 #define SEARCHLEVEL50_MOVECHANCE        63
 #define SEARCHLEVEL100_MOVECHANCE       83
 //Chance of encountering Hidden Abilities at search levels
-#define SEARCHLEVEL0_ABILITYCHANCE      0
+#define SEARCHLEVEL0_ABILITYCHANCE      100
 #define SEARCHLEVEL5_ABILITYCHANCE      0
 #define SEARCHLEVEL10_ABILITYCHANCE     5
 #define SEARCHLEVEL25_ABILITYCHANCE     15
